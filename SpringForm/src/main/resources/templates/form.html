@@ -1,23 +1,19 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html>
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 </head>
 <body>
 	<center>
-		<div>
-			<h1>Formulario</h1>
-		</div>
-		<div>
-			<form th:action = "#" th:action = "@{/test}" th:object = "${person}" method = "post">
-				Nombre: <input type = "text" th:field = "*{nombre}"><br><br>
-				Apellidos: <input type = "text" th:field = "*{apellidos}"><br><br>
-				Teléfono: <input type = "text" th:field = "*{telefono}"><br><br>
-				Email: <input type = "text" th:field = "*{email}"><br><br>
-				<input type = "submit" value = "Enviar">
-			</form>
-		</div>
-    </center>
+		<h1>Formulario</h1>
+		<form action = "#" th:action = "@{/form}" th:object = "${person}" method = "post">
+			Nombre: <input type = "text" th:field = "*{nombre}"><br><br>
+			Apellidos: <input type = "text" th:field = "*{apellidos}"><br><br>
+			Teléfono: <input type = "text" th:field = "*{telefono}"><br><br>
+			Correo: <input type = "text" th:field = "*{correo}"><br><br>
+			<input type = "submit" value = "Submit">
+		</form>
+	</center>
 </body>
 </html>

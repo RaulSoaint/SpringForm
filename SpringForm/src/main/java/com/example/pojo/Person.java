@@ -5,18 +5,13 @@ public class Person {
 	private String nombre;
 	private String apellidos;
 	private int telefono;
-	private String email;
+	private String correo;
+	
 	public String getNombre() {
 		return nombre;
 	}
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
-	}
-	public String getApellidos() {
-		return apellidos;
-	}
-	public void setApellidos(String apellidos) {
-		this.apellidos = apellidos;
 	}
 	public int getTelefono() {
 		return telefono;
@@ -24,11 +19,17 @@ public class Person {
 	public void setTelefono(int telefono) {
 		this.telefono = telefono;
 	}
-	public String getEmail() {
-		return email;
+	public String getCorreo() {
+		return correo;
 	}
-	public void setEmail(String email) {
-		this.email = email;
+	public void setCorreo(String correo) {
+		this.correo = correo;
+	}
+	
+	@Override
+	public String toString() {
+		return "Person [nombre=" + nombre + ", apellidos=" + apellidos + ", telefono=" + telefono + ", correo=" + correo
+				+ "]";
 	}
 	
 	
