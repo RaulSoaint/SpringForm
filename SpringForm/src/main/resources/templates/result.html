@@ -5,6 +5,13 @@
 <title>Insert title here</title>
 </head>
 <body>
-Resultado del formulario
+	<center><h1>Resultado del formulario</h1>
+		<table>
+			<tr><td th:text = "${Persona.getNombre()}"></td></tr>
+			<tr><td th:text = "${Persona.getApellidos()}"></td></tr>
+			<tr><td th:text = "${Persona.getTelefono()}"></td></tr>
+			<tr><td th:text = "${Persona.getCorreo()}"></td></tr>
+		</table>
+	</center>
 </body>
 </html>

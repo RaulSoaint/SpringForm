@@ -1,18 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
+<meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
 	<center>
 		<h1>Formulario</h1>
 		<form action = "#" th:action = "@{/form}" th:object = "${person}" method = "post">
-			Nombre: <input type = "text" th:field = "*{nombre}"><br><br>
-			Apellidos: <input type = "text" th:field = "*{apellidos}"><br><br>
-			Tel�fono: <input type = "text" th:field = "*{telefono}"><br><br>
-			Correo: <input type = "text" th:field = "*{correo}"><br><br>
-			<input type = "submit" value = "Submit">
+			<table>
+			<tr><td>Nombre: <input type = "text" th:field = "*{nombre}"></td></tr><br><br>
+				<td th:if = "${#fields.hasErrors('nombre')}" th:errors = "*{nombre}">Errores en el campo del nombre</td>	
+			<tr><td>Apellidos: <input type = "text" th:field = "*{apellidos}"></td></tr><br><br>
+			<tr><td>Teléfono: <input type = "text" th:field = "*{telefono}"></td></tr><br><br>
+				<td th:if = "${#fields.hasErrors('telefono')}" th:errors = "*{telefono}">Errores en el campo teléfono</td>
+			<tr><td>Correo: <input type = "text" th:field = "*{correo}"></td></tr><br><br>
+			<tr><td><input type = "submit" value = "Submit"></td></tr>
+			</table>
+		
 		</form>
 	</center>
 </body>
