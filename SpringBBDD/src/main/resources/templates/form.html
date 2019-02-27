@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Formulario</title>
+</head>
+<body>
+	<center>
+		<h1>Formulario</h1>
+		<div>
+			<form action = "#" th:action = "@{/actionForm}" method = "post" th:object = "${persona}">
+			<table>
+				<tr><td>Nombre: <input type = "text" th:field = "*{nombre}"></td></tr>
+				<tr><td>Apellidos: <input type = "text" th:field = "*{apellidos}"></td></tr>
+				<tr><td>Teléfono: <input type = "text" th:field = "*{telefono}"></td></tr>
+				<tr><td>Correo: <input type = "text" th:field = "*{correo}"></td></tr>
+				<tr><td><input type = "submit" value = "Submit"></td>
+			     <td><input type = "Reset" value = "Reset"></td>
+				</tr>
+			</table>
+			</form>
+		</div>
+	</center>
+</body>
+</html>
