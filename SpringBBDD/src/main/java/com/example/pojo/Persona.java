@@ -1,18 +1,36 @@
 package com.example.pojo;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
 
-import org.hibernate.validator.constraints.Range;
-
+@Entity
 public class Persona {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Integer id;
+	
 	@NotEmpty
 	private String nombre;
+	
 	@NotEmpty
 	private String apellidos;
 	
-	@Range(min = 9, max = 9)
-	private int telefono;
+	public Integer getId() {
+		return id;
+	}
+	public void setId(Integer id) {
+		this.id = id;
+	}
+	@Min(600000000)
+	@Max(699999999)
+	private Integer telefono;
+	
 	@NotEmpty
 	private String correo;
 	
@@ -28,10 +46,10 @@ public class Persona {
 	public void setApellidos(String apellidos) {
 		this.apellidos = apellidos;
 	}
-	public int getTelefono() {
+	public Integer getTelefono() {
 		return telefono;
 	}
-	public void setTelefono(int telefono) {
+	public void setTelefono(Integer telefono) {
 		this.telefono = telefono;
 	}
 	public String getCorreo() {

@@ -11,9 +11,13 @@
 			<form action = "#" th:action = "@{/actionForm}" method = "post" th:object = "${persona}">
 			<table>
 				<tr><td>Nombre: <input type = "text" th:field = "*{nombre}"></td></tr>
+				<tr><td th:if = "${#fields.hasErrors('nombre')}" th:errors = "*{nombre}"></td></tr>
 				<tr><td>Apellidos: <input type = "text" th:field = "*{apellidos}"></td></tr>
+				<tr><td th:if = "${#fields.hasErrors('apellidos')}" th:errors = "*{apellidos}"></td></tr>
 				<tr><td>Teléfono: <input type = "text" th:field = "*{telefono}"></td></tr>
+				<tr><td th:if = "${#fields.hasErrors('telefono')}" th:errors = "*{telefono}"></td></tr>
 				<tr><td>Correo: <input type = "text" th:field = "*{correo}"></td></tr>
+				<tr><td th:if = "${#fields.hasErrors('correo')}" th:errors = "*{correo}"></td></tr>
 				<tr><td><input type = "submit" value = "Submit"></td>
 			     <td><input type = "Reset" value = "Reset"></td>
 				</tr>
